@@ -1,0 +1,65 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page"; 
+}
+
+<div class="text-center" style="margin-top: 150px;">
+    <h1 class="display-4">Welcome to Appointment Management</h1>
+</div>
+<style>
+    .login-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+
+    .login-section {
+        margin: 0 20px;
+    }
+
+        .login-section form {
+            border: 2px dotted #999;
+            padding: 20px;
+        }
+</style>
+
+<div class="login-container">
+    <section class="login-section">
+        <h2>Patient Login</h2>
+        <form method="post" action="patient-login">
+            <label for="patientUsername">Username:</label>
+            <input style="margin-left:1%" type="text" id="patientUsername" name="patientUsername" value="patient@example.com">
+            <br>
+            <br>
+            <label for="patientPassword">Password:</label>
+            <input style="margin-left:1.9%" type="password" id="patientPassword" name="patientPassword" value="patientPassword">
+            <br>
+            <br>
+			<a asp-area="" asp-page="/Patient-pages/patient-login" class="btn btn-secondary">Login</a>
+           
+            <br>
+            <br>
+            <a style="font-size:12px" href="patient-forgot-password">Forgot Password?</a>
+        </form>
+    </section>
+
+    <section class="login-section">
+        <h2>Staff Login</h2>
+        <form method="post" action="staff-login">
+            <label for="staffUsername">Username:</label>
+            <input style="margin-left:1%" type="text" id="staffUsername" name="staffUsername">
+            <br>
+            <br>
+            <label for="staffPassword">Password:</label>
+            <input style="margin-left:1.9%" type="password" id="staffPassword" name="staffPassword">
+            <br>
+            <br>
+            <a asp-area="" asp-page="/patient-login" class="btn btn-secondary">Login</a>
+            <br>
+            <br>
+            <a style="font-size:12px" href="staff-forgot-password">Forgot Password?</a>
+        </form>
+    </section>
+
+</div>

@@ -1,0 +1,54 @@
+﻿@page
+@model FYP_Appointment_Management.Pages.Staffs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Staff List</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Staff_First_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Staff_Last_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Staff_Role)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staff[0].Staff_Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Staff) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff_First_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff_Last_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff_Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Staff_Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Staff_Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Staff_Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Staff_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
