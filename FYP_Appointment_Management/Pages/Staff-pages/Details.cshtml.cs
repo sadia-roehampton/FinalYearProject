@@ -12,9 +12,9 @@ namespace FYP_Appointment_Management.Pages.Staff_pages
 {
     public class DetailsModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.Staff_appointmentsContext _context;
 
-        public DetailsModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public DetailsModel(FYP_Appointment_Management.Data.Staff_appointmentsContext context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace FYP_Appointment_Management.Pages.Staff_pages
                 return NotFound();
             }
 
-            var staff_appointments = await _context.Staff_appointments.FirstOrDefaultAsync(m => m.Id == id);
+            var staff_appointments = await _context.Staffs_appointments.FirstOrDefaultAsync(m => m.Id == id);
             if (staff_appointments == null)
             {
                 return NotFound();

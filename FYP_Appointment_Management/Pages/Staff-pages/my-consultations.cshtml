@@ -3,15 +3,16 @@
 @{
     ViewData["Title"] = "My Consultations";
 }
-
-<h1>@ViewData["Title"]</h1>
-
 <div style="display: flex; align-items: center; margin-right: 10%; justify-content: left;">
+	<h1>@ViewData["Title"]</h1>
     <div style="display: flex; margin-left: 5%;">
         <a asp-area="" asp-page="/Staff-pages/staff-login" class="btn btn-light"> Home</a>
     </div>
     <div style="display: flex; margin-left: 2%;">
-        <a asp-area="" asp-page="/Staff-pages/my-account" class=" btn btn-light">Account</a>
+        <a asp-area="" asp-page="/Staff-pages/staff-account" class=" btn btn-light">Account</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Staff-pages/look_up" class="btn btn-light">Look-up Patient</a>
     </div>
     <div style="display: flex; margin-left: 2%;">
         <a asp-area="" asp-page="/Logout-page" class="btn btn-light">Logout</a>
@@ -23,6 +24,7 @@
         <tr>
             <th>Date</th>
             <th>Time</th>
+            <th>Patient_Name</th>
             <th>Status</th>
             <th>Actions</th>
         </tr>
@@ -33,6 +35,7 @@
             <tr>
                 <td>@Staff_appointments.Date.ToShortDateString()</td>
                 <td>@Staff_appointments.Time.ToShortTimeString()</td>
+                <td>@Staff_appointments.Patient_Name</td>
                 <td>@Staff_appointments.Status</td>
                 <td>@Staff_appointments.Actions</td>
                 <td>

@@ -12,9 +12,9 @@ namespace FYP_Appointment_Management.Pages.Staff_pages
 {
     public class DeleteModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.Staff_appointmentsContext _context;
 
-        public DeleteModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public DeleteModel(FYP_Appointment_Management.Data.Staff_appointmentsContext context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace FYP_Appointment_Management.Pages.Staff_pages
                 return NotFound();
             }
 
-            var staff_appointments = await _context.Staff_appointments.FirstOrDefaultAsync(m => m.Id == id);
+            var staff_appointments = await _context.Staffs_appointments.FirstOrDefaultAsync(m => m.Id == id);
 
             if (staff_appointments == null)
             {
@@ -49,11 +49,11 @@ namespace FYP_Appointment_Management.Pages.Staff_pages
                 return NotFound();
             }
 
-            var staff_appointments = await _context.Staff_appointments.FindAsync(id);
+            var staff_appointments = await _context.Staffs_appointments.FindAsync(id);
             if (staff_appointments != null)
             {
                 Staff_appointments = staff_appointments;
-                _context.Staff_appointments.Remove(Staff_appointments);
+                _context.Staffs_appointments.Remove(Staff_appointments);
                 await _context.SaveChangesAsync();
             }
 

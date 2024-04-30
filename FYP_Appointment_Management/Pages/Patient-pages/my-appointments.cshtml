@@ -4,9 +4,8 @@
     ViewData["Title"] = "My Appointments";
 }
 
-<h1>@ViewData["Title"]</h1>
-
 <div style="display: flex; align-items: center; margin-right: 10%; justify-content: left;">
+	<h1>@ViewData["Title"]</h1>
     <div style="display: flex; margin-left: 5%;">
         <a asp-area="" asp-page="/Patient-pages/patient-login" class="btn btn-light"> Home</a>
     </div>
@@ -23,6 +22,7 @@
         <tr>
             <th>Date</th>
             <th>Time</th>
+            <th>Doctor_Name</th>
             <th>Status</th>
             <th>Actions</th>
         </tr>
@@ -33,6 +33,7 @@
             <tr>
                 <td>@Patient_appointments.Date.ToShortDateString()</td>
                 <td>@Patient_appointments.Time.ToShortTimeString()</td>
+                <td>@Patient_appointments.Doctor_Name</td>
                 <td>@Patient_appointments.Status</td>
                 <td>@Patient_appointments.Actions</td>
                 <td>
