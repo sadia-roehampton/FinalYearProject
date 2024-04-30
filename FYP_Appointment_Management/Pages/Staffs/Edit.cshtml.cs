@@ -13,9 +13,9 @@ namespace FYP_Appointment_Management.Pages.Staffs
 {
     public class EditModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.StaffContext _context;
 
-        public EditModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public EditModel(FYP_Appointment_Management.Data.StaffContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace FYP_Appointment_Management.Pages.Staffs
                 return NotFound();
             }
 
-            var staff =  await _context.Staff.FirstOrDefaultAsync(m => m.Staff_Id == id);
+            var staff =  await _context.Staffs.FirstOrDefaultAsync(m => m.Staff_Id == id);
             if (staff == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace FYP_Appointment_Management.Pages.Staffs
 
         private bool StaffExists(int id)
         {
-            return _context.Staff.Any(e => e.Staff_Id == id);
+            return _context.Staffs.Any(e => e.Staff_Id == id);
         }
     }
 }

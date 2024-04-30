@@ -13,9 +13,9 @@ namespace FYP_Appointment_Management.Pages.Patients
 {
     public class EditModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.PatientContext _context;
 
-        public EditModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public EditModel(FYP_Appointment_Management.Data.PatientContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace FYP_Appointment_Management.Pages.Patients
                 return NotFound();
             }
 
-            var patient =  await _context.Patient.FirstOrDefaultAsync(m => m.Patient_Id == id);
+            var patient =  await _context.Patients.FirstOrDefaultAsync(m => m.Patient_Id == id);
             if (patient == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace FYP_Appointment_Management.Pages.Patients
 
         private bool PatientExists(int id)
         {
-            return _context.Patient.Any(e => e.Patient_Id == id);
+            return _context.Patients.Any(e => e.Patient_Id == id);
         }
     }
 }

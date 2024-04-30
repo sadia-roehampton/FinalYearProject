@@ -12,9 +12,9 @@ namespace FYP_Appointment_Management.Pages.Departments
 {
     public class CreateModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.DepartmentContext _context;
 
-        public CreateModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public CreateModel(FYP_Appointment_Management.Data.DepartmentContext context)
         {
             _context = context;
         }
@@ -35,7 +35,7 @@ namespace FYP_Appointment_Management.Pages.Departments
                 return Page();
             }
 
-            _context.Department.Add(Department);
+            _context.departments.Add(Department);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

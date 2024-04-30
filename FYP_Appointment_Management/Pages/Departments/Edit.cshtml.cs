@@ -13,9 +13,9 @@ namespace FYP_Appointment_Management.Pages.Departments
 {
     public class EditModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.DepartmentContext _context;
 
-        public EditModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public EditModel(FYP_Appointment_Management.Data.DepartmentContext context)
         {
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace FYP_Appointment_Management.Pages.Departments
                 return NotFound();
             }
 
-            var department =  await _context.Department.FirstOrDefaultAsync(m => m.Dept_Id == id);
+            var department =  await _context.departments.FirstOrDefaultAsync(m => m.Dept_Id == id);
             if (department == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace FYP_Appointment_Management.Pages.Departments
 
         private bool DepartmentExists(int id)
         {
-            return _context.Department.Any(e => e.Dept_Id == id);
+            return _context.departments.Any(e => e.Dept_Id == id);
         }
     }
 }

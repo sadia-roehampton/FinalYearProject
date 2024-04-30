@@ -12,9 +12,9 @@ namespace FYP_Appointment_Management.Pages.Departments
 {
     public class DeleteModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.DepartmentContext _context;
 
-        public DeleteModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public DeleteModel(FYP_Appointment_Management.Data.DepartmentContext context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace FYP_Appointment_Management.Pages.Departments
                 return NotFound();
             }
 
-            var department = await _context.Department.FirstOrDefaultAsync(m => m.Dept_Id == id);
+            var department = await _context.departments.FirstOrDefaultAsync(m => m.Dept_Id == id);
 
             if (department == null)
             {
@@ -49,11 +49,11 @@ namespace FYP_Appointment_Management.Pages.Departments
                 return NotFound();
             }
 
-            var department = await _context.Department.FindAsync(id);
+            var department = await _context.departments.FindAsync(id);
             if (department != null)
             {
                 Department = department;
-                _context.Department.Remove(Department);
+                _context.departments.Remove(Department);
                 await _context.SaveChangesAsync();
             }
 

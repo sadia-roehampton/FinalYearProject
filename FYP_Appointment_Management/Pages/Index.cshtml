@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page"; 
 }
 
-<div class="text-center" style="margin-top: 150px;">
+<div class="text-center" style="margin-top: 80px;">
     <h1 class="display-4">Welcome to Appointment Management</h1>
 </div>
 <style>
@@ -24,7 +24,7 @@
         }
 </style>
 
-<div class="login-container">
+<div class="login-container" style="margin-top: 5%">
     <section class="login-section">
         <h2>Patient Login</h2>
         <form method="post" action="patient-login">
@@ -37,10 +37,9 @@
             <br>
             <br>
 			<a asp-area="" asp-page="/Patient-pages/patient-login" class="btn btn-secondary">Login</a>
-           
             <br>
             <br>
-            <a style="font-size:12px" href="patient-forgot-password">Forgot Password?</a>
+            <a style="font-size:12px" href="forgot-password">Forgot Password?</a>
         </form>
     </section>
 
@@ -48,17 +47,17 @@
         <h2>Staff Login</h2>
         <form method="post" action="staff-login">
             <label for="staffUsername">Username:</label>
-            <input style="margin-left:1%" type="text" id="staffUsername" name="staffUsername">
+            <input style="margin-left:1%" type="text" id="staffUsername" name="staffUsername" value="staff@example.com">
             <br>
             <br>
             <label for="staffPassword">Password:</label>
-            <input style="margin-left:1.9%" type="password" id="staffPassword" name="staffPassword">
+            <input style="margin-left:1.9%" type="password" id="staffPassword" name="staffPassword" value="staffPassword">
             <br>
             <br>
-            <a asp-area="" asp-page="/patient-login" class="btn btn-secondary">Login</a>
+            <a asp-area="" asp-page="/Staff-pages/staff-login" class="btn btn-secondary">Login</a>
             <br>
             <br>
-            <a style="font-size:12px" href="staff-forgot-password">Forgot Password?</a>
+            <a style="font-size:12px" href="forgot-password">Forgot Password?</a>
         </form>
     </section>
 

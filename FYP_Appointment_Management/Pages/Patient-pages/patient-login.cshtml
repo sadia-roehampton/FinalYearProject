@@ -1,5 +1,4 @@
 ﻿@page
-@model HomeController
 @{
     ViewData["Title"] = "Welcome Patient!";
 }
@@ -16,7 +15,6 @@
     <header class="bg-light-blue">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light-blue border-bottom box-shadow mb-3">
             <div class="container">
-                @* <a class="navbar-brand" asp-area="" asp-page="/Index">Appointment Management</a> *@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -27,7 +25,7 @@
                             <a class="nav-link text-dark; bg-light" asp-area="" asp-page="">Home</a>
                         </li>
                         <li class="nav-item" style="margin-right: 20px;">
-                            <a class="nav-link text-dark; bg-light" asp-area="" asp-page="/Index">My Appointments</a>
+                            <a class="nav-link text-dark; bg-light" asp-area="" asp-page="/Patient-pages/my-appointments">My Appointments</a>
                         </li>
                         <li class="nav-item" style="margin-right: 20px;">
                             <a class="nav-link text-dark; bg-light" asp-area="" asp-page="/Patient-pages/my-account">Account</a>
@@ -40,6 +38,13 @@
             </div>
         </nav>
     </header>
+
+    <p>
+        <br><br><br><br> Your health is our top priority, and we're dedicated to providing
+        you with the best possible care. <br><br> If you have any questions or need assistance, don't hesitate
+        to contact our patient support team.
+        <br><br> Do you require Flu jab? - Please speak to us today for more information.
+    </p>
 
 </body>
 </html>

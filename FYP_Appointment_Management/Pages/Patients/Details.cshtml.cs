@@ -12,9 +12,9 @@ namespace FYP_Appointment_Management.Pages.Patients
 {
     public class DetailsModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.PatientContext _context;
 
-        public DetailsModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public DetailsModel(FYP_Appointment_Management.Data.PatientContext context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace FYP_Appointment_Management.Pages.Patients
                 return NotFound();
             }
 
-            var patient = await _context.Patient.FirstOrDefaultAsync(m => m.Patient_Id == id);
+            var patient = await _context.Patients.FirstOrDefaultAsync(m => m.Patient_Id == id);
             if (patient == null)
             {
                 return NotFound();

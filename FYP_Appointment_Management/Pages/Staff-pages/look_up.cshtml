@@ -1,0 +1,28 @@
+﻿@page
+@{
+    ViewData["Title"] = "Look-up Patient";
+}
+<div style="display: flex; align-items: center; margin-right: 10%; justify-content: left;">
+    <h2>@ViewData["Title"]</h2>
+    <div style="display: flex; margin-left: 5%;">
+        <a asp-area="" asp-page="/Staff-pages/staff-login" class="btn btn-light"> Home</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Staff-pages/my-consultations" class="btn btn-light">My Consultations</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Staff-pages/my-consultations" class="btn btn-light">Look-up Patient</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Logout-page" class="btn btn-light">Logout</a>
+    </div>
+</div>
+
+<div style="margin-top: 12%">
+    <form method="get">
+        <label>Search by Patient Name or ID:</label>
+        <br>
+        <input style="margin-left:0%" type="text" name="searchQuery">
+		<button type="submit">Search</button>
+	</form>
+</div>

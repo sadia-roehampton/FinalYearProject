@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace FYP_Appointment_Management.Migrations
+namespace FYP_Appointment_Management.Migrations.Patient
 {
-    [DbContext(typeof(FYP_Appointment_ManagementContext))]
-    [Migration("20240427144755_InitialCreate")]
+    [DbContext(typeof(PatientContext))]
+    [Migration("20240430114607_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -24,26 +24,6 @@ namespace FYP_Appointment_Management.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("FYP_Appointment_Management.Models.Department", b =>
-                {
-                    b.Property<int>("Dept_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Dept_Id"));
-
-                    b.Property<string>("Dept_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Dept_phone")
-                        .HasColumnType("int");
-
-                    b.HasKey("Dept_Id");
-
-                    b.ToTable("Department");
-                });
 
             modelBuilder.Entity("FYP_Appointment_Management.Models.Patient", b =>
                 {
@@ -77,36 +57,7 @@ namespace FYP_Appointment_Management.Migrations
 
                     b.HasKey("Patient_Id");
 
-                    b.ToTable("Patient");
-                });
-
-            modelBuilder.Entity("FYP_Appointment_Management.Models.Staff", b =>
-                {
-                    b.Property<int>("Staff_Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Staff_Id"));
-
-                    b.Property<string>("Staff_Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Staff_First_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Staff_Last_Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Staff_Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Staff_Id");
-
-                    b.ToTable("Staff");
+                    b.ToTable("Patients");
                 });
 #pragma warning restore 612, 618
         }

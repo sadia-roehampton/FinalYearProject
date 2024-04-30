@@ -12,9 +12,9 @@ namespace FYP_Appointment_Management.Pages.Departments
 {
     public class IndexModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.DepartmentContext _context;
 
-        public IndexModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public IndexModel(FYP_Appointment_Management.Data.DepartmentContext context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace FYP_Appointment_Management.Pages.Departments
 
         public async Task OnGetAsync()
         {
-            Department = await _context.Department.ToListAsync();
+            Department = await _context.departments.ToListAsync();
         }
     }
 }

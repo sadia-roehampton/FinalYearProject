@@ -12,9 +12,9 @@ namespace FYP_Appointment_Management.Pages.Patients
 {
     public class CreateModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.PatientContext _context;
 
-        public CreateModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public CreateModel(FYP_Appointment_Management.Data.PatientContext context)
         {
             _context = context;
         }
@@ -35,7 +35,7 @@ namespace FYP_Appointment_Management.Pages.Patients
                 return Page();
             }
 
-            _context.Patient.Add(Patient);
+            _context.Patients.Add(Patient);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

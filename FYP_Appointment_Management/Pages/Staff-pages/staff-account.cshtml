@@ -1,0 +1,30 @@
+﻿@page
+@{
+    ViewData["Title"] = "My Account";
+}
+<div style="display: flex; align-items: center; margin-right: 10%; justify-content: left;">
+    <h1>@ViewData["Title"]</h1>
+    <div style="display: flex; margin-left: 5%;">
+        <a asp-area="" asp-page="/Staff-pages/staff-login" class="btn btn-light"> Home</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Staff-pages/my-consultations" class="btn btn-light">My Consultations</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Staff-pages/look_up" class="btn btn-light">Look-up Patient</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Logout-page" class="btn btn-light">Logout</a>
+    </div>
+</div>
+
+<h7><u>Please select from following Settings</u></h7>
+<br>
+<br>
+<div>
+    <a asp-area="" asp-page="" class="btn btn-lg">Personal Details</a>
+</div>
+<br>
+<div>
+    <a asp-area="" asp-page="" class="btn btn-lg">Sign-in Details</a>
+</div>

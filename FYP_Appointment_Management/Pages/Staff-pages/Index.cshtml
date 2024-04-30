@@ -1,0 +1,70 @@
+﻿@page
+@model FYP_Appointment_Management.Pages.Staff_pages.IndexModel
+
+@{
+    ViewData["Title"] = "My Consultations";
+}
+<div style="display: flex; align-items: center; margin-right: 10%; justify-content: left;">
+    <div style="display: flex; margin-left: 5%;">
+        <a asp-area="" asp-page="/Staff-pages/staff-login" class="btn btn-light"> Home</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Staff-pages/staff-account" class=" btn btn-light">Account</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Staff-page" class="btn btn-light">Logout</a>
+    </div>
+</div>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs_appointments[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs_appointments[0].Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs_appointments[0].Doctor_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs_appointments[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Staffs_appointments[0].Actions)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Staff_appointments in Model.Staffs_appointments)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Staff_appointments.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Staff_appointments.Time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Staff_appointments.Patient_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Staff_appointments.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Staff_appointments.Actions)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@Staff_appointments.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@Staff_appointments.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@Staff_appointments.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

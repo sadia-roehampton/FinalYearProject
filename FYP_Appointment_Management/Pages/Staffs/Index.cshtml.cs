@@ -12,9 +12,9 @@ namespace FYP_Appointment_Management.Pages.Staffs
 {
     public class IndexModel : PageModel
     {
-        private readonly FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext _context;
+        private readonly FYP_Appointment_Management.Data.StaffContext _context;
 
-        public IndexModel(FYP_Appointment_Management.Data.FYP_Appointment_ManagementContext context)
+        public IndexModel(FYP_Appointment_Management.Data.StaffContext context)
         {
             _context = context;
         }
@@ -23,7 +23,7 @@ namespace FYP_Appointment_Management.Pages.Staffs
 
         public async Task OnGetAsync()
         {
-            Staff = await _context.Staff.ToListAsync();
+            Staff = await _context.Staffs.ToListAsync();
         }
     }
 }

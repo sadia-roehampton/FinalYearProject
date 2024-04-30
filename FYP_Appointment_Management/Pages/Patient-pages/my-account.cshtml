@@ -1,38 +1,31 @@
 ﻿@page
-@model HomeController
 @{
     ViewData["Title"] = "My Account";
 }
-
-@* <h1>@ViewData["Title"]</h1>
-<a asp-area="" asp-page="/patient-login" class="btn btn-light"> Home</a>
-<a asp-area="" asp-page="/Logout-page" class="btn btn-light">Logout</a> *@
 <div style="display: flex; align-items: center; margin-right: 10%; justify-content: left;">
     <h1>@ViewData["Title"]</h1>
     <div style="display: flex; margin-left: 5%;">
         <a asp-area="" asp-page="/Patient-pages/patient-login" class="btn btn-light"> Home</a>
     </div>
     <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Patient-pages/my-appointments" class="btn btn-light">My Appointments</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
         <a asp-area="" asp-page="/Logout-page" class="btn btn-light">Logout</a>
     </div>
 </div>
 
-<div class="account">
-    <section class="account-section">
-        <h6><u>Please select from following Settings</u></h6>
-        <br>
-        <form method="post" action="patient-login">
-            <div style="margin-left:0%">
-                <h5>Personal Details</h5>
-            </div>
-            <br>
-            <div style="margin-left:0%">
-                <h5>Sign-in Details</h5>
-            </div>
-            <br>
-            <div style="margin-left:0%">
-                <h5>Address & Phonebook</h5>
-            </div>
-        </form>
-    </section>
+<h7><u>Please select from following Settings</u></h7>
+<br>
+<br>
+<div>
+	<a asp-area="" asp-page="/Patient-pages/patient-login" class="btn btn-lg">Personal Details</a>
+</div>
+<br>
+<div>
+    <a asp-area="" asp-page="/Patient-pages/patient-login" class="btn btn-lg">Sign-in Details</a>
+</div>
+<br>
+<div>
+    <a asp-area="" asp-page="/Patient-pages/patient-login" class="btn btn-lg">Address & Phonebook</a>
 </div>

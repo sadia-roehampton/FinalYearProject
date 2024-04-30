@@ -14,8 +14,7 @@ namespace FYP_Appointment_Management.Data
         {
         }
 
-        public DbSet<FYP_Appointment_Management.Models.Department> Department { get; set; } = default!;
-        public DbSet<FYP_Appointment_Management.Models.Patient> Patient { get; set; } = default!;
-        public DbSet<FYP_Appointment_Management.Models.Staff> Staff { get; set; } = default!;
+        public DbSet<FYP_Appointment_Management.Models.Patient_appointments> Patient_appointments { get; set; } = default!;
+        public DbSet<FYP_Appointment_Management.Models.Staff_appointments> Staff_appointments { get; set; } = default!;
     }
 }

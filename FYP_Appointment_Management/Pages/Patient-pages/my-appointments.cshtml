@@ -1,6 +1,46 @@
 ﻿@page
-@model HomeController
+@model FYP_Appointment_Management.Pages.Patient_pages.IndexModel
 @{
     ViewData["Title"] = "My Appointments";
 }
+
 <h1>@ViewData["Title"]</h1>
+
+<div style="display: flex; align-items: center; margin-right: 10%; justify-content: left;">
+    <div style="display: flex; margin-left: 5%;">
+        <a asp-area="" asp-page="/Patient-pages/patient-login" class="btn btn-light"> Home</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Patient-pages/my-account" class=" btn btn-light">Account</a>
+    </div>
+    <div style="display: flex; margin-left: 2%;">
+        <a asp-area="" asp-page="/Logout-page" class="btn btn-light">Logout</a>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Patient_appointments in Model.Patients_appointments)
+        {
+            <tr>
+                <td>@Patient_appointments.Date.ToShortDateString()</td>
+                <td>@Patient_appointments.Time.ToShortTimeString()</td>
+                <td>@Patient_appointments.Status</td>
+                <td>@Patient_appointments.Actions</td>
+                <td>
+                    <button class="btn btn-primary" onclick="confirmAppointment('@Patient_appointments.Id')">Confirm</button>
+                    <button class="btn btn-warning" onclick="rescheduleAppointment('@Patient_appointments.Id')">Reschedule</button>
+                    <button class="btn btn-danger" onclick="cancelAppointment('@Patient_appointments.Id')">Cancel</button>
+                </td>
+            </tr>
+        } 
+    </tbody>
+</table>
